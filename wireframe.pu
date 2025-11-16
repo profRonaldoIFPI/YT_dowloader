@@ -1,0 +1,28 @@
+@startsalt
+{
+    {
+    "Cole a URL do video aqui: " 
+    ' ^Escolha a resulução: ^ ^1080^ ^720^ |
+    ^Escolha a resulução: ^ |
+    ' ^Escolha a faixa de audio: ^Inglês ^ ^Português^	
+    ^Escolha a faixa de audio: ^	
+    }
+    {
+        [Selecione a parta de destino]|
+         D:\Downloads 
+    }
+    [Iniciar download] 
+    --
+    {#
+        Video | resolução | local | progresso | ações
+        Video aula REST | 1080p | D:\Downloads | 100% | [Abrir local]
+        Video aula CRUD | 1080p | D:\Downloads | 15% | [Cancelar]
+        . |. |. |. |. 
+        . |. |. |. |.
+    }
+    --
+    {   
+        YouTube Donwloader | v0.01b
+    }
+}
+@endsalt
