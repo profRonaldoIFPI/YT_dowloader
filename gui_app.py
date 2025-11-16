@@ -4,6 +4,7 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 import subprocess
 import platform
+import sys
 
 from pytubefix import YouTube
 from YouTubeDonwloader import (
@@ -32,6 +33,13 @@ class DownloaderGUI:
         self.root = root
         self.root.title("YouTube Downloader")
         self.root.geometry("900x600")
+        try:
+            base = getattr(sys, "_MEIPASS", os.getcwd())
+            icon_path = os.path.join(base, "assets", "video_download.ico")
+            if os.path.exists(icon_path):
+                self.root.iconbitmap(icon_path)
+        except Exception:
+            pass
 
         # Variáveis
         self.url_var = tk.StringVar()
